@@ -1,0 +1,34 @@
+<md-card>
+    <md-card-header>
+        <!-- <md-card-avatar aria-label="...">
+            <md-icon class="md-avatar-icon"></md-icon>
+        </md-card-avatar> -->
+        <md-card-header-text>
+            <span class="md-title">{{index + 1}}/{{questions.length}}</span>
+            <br>
+            <span><strong>wins:</strong> {{score.wins}} // <strong>fails:</strong> {{score.fails}} // <strong>viewed:</strong> {{score.viewed}} </span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-card-content>
+        <p class="question">{{card.question}}</p>
+        <md-checkbox aria-label="Answer-A" ng-model="answer[0]" ng-class="{'failure': card.options[0].wrong, 'success': card.options[0].correct}">{{card.options[0].text}}</md-checkbox>
+        <md-checkbox aria-label="Answer-B" ng-model="answer[1]" ng-class="{'failure': card.options[1].wrong, 'success': card.options[1].correct}">{{card.options[1].text}}</md-checkbox>
+        <md-checkbox aria-label="Answer-C" ng-model="answer[2]" ng-class="{'failure': card.options[2].wrong, 'success': card.options[2].correct}">{{card.options[2].text}}</md-checkbox>
+        <md-checkbox aria-label="Answer-D" ng-model="answer[3]" ng-class="{'failure': card.options[3].wrong, 'success': card.options[3].correct}">{{card.options[3].text}}</md-checkbox>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-icon-button" aria-label="Delete" ng-click="goTo('start')">
+            <md-icon>close</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Edit">
+            <md-icon>create</md-icon>
+        </md-button>
+        <div flex></div>
+        <md-button class="md-icon-button" aria-label="Show Result" ng-click="getResult()" ng-show="canAnswer">
+            <md-icon>done</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Next Card" ng-click="shuffleCard()" ng-hide="canAnswer">
+            <md-icon>forward</md-icon>
+        </md-button>
+    </md-card-actions>
+</md-card>

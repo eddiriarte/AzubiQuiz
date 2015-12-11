@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- AzubiQuiz! -->
+<!-- 2015 Eduardo Iriarte-Mendez -->
+<!-- github.com/develephant/amy -->
+<head>
+    <!-- meta stuff -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1" />
+    <!-- Angular MaterialUI -->
+    <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.css">
+    <!-- Angular Material Deisgn Icons -->
+    <link rel="stylesheet" type="text/css" href="lib/material-design-icons-iconfont/dist/material-design-icons.css">
+    <!-- Mozilla Fira font : change to whatever you'd like in the root index.css -->
+    <!-- <link rel="stylesheet" type="text/css" href="lib/fira-compact/fira.css"> -->
+    <!-- Custom CSS for your specific app -->
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <!-- A title -->
+    <title>AzubiQuiz</title>
+</head>
+
+<!-- MainController binds body tag scope -->
+<body layout="column" ng-controller="MainController">
+
+    <!-- Include header : found in tpl folder -->
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <span id="md-toolbar-title">AzubiQuiz</span>
+        <span flex></span>
+        <md-button ng-click="doFace()" class="md-icon-button">
+          <md-icon id="face-icon">face</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <!-- Main ng-view layout with MaterialUI -->
+    <ng-view layout="column" layout-align="center none" flex></ng-view>
+
+    <!-- Inject jQuery into some namespaces. -->
+    <script>
+    window.$ = window.jQuery = require('./lib/jquery/dist/jquery.min');
+    </script>
+
+    <!-- build:js js/vendor.js -->
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="lib/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="lib/angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="lib/ng-electron/ng-electron.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:app js/app.js -->
+    <script type="text/javascript" src="src/app.js"></script>
+    <script type="text/javascript" src="src/route/RouteModule.js"></script>
+    <script type="text/javascript" src="src/main/MainModule.js"></script>
+    <script type="text/javascript" src="src/words/WordsModule.js"></script>
+    <script type="text/javascript" src="src/choices/ChoicesModule.js"></script>
+    <!-- endbuild -->
+
+</body><!-- MainController -->
+</html>

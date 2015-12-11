@@ -1,0 +1,39 @@
+
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	background-color: white;
+}
+
+.card-demo md-card {
+  max-height: 100px;
+}
+
+.question {
+    font-size: 2em;
+    text-align: center;
+}
+
+
+.big {
+	font-size: 4em;
+	text-align: center;
+}
+
+.response {
+	text-align: center;
+	font-weight: bold;
+	color: #aaa;
+}
+
+.success .md-label,
+.success .md-label span { color: green; }
+md-checkbox.success .md-icon { border-color: green; }
+md-checkbox.success.md-checked .md-icon { background-color: green; border-color: green; }
+
+.failure .md-label,
+.failure .md-label span { color: rgba(244,67,54,0.87); }
+md-checkbox.failure .md-icon { border-color: rgba(244,67,54,0.87); }
+md-checkbox.failure.md-checked .md-icon { background-color: rgba(244,67,54,0.87); border-color: rgba(244,67,54,0.87); }

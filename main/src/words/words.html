@@ -1,0 +1,54 @@
+<md-card>
+    <md-card-header>
+        <!-- <md-card-avatar aria-label="...">
+            <md-icon class="md-avatar-icon"></md-icon>
+        </md-card-avatar> -->
+        <md-card-header-text>
+            <span class="md-title">{{index + 1}}/{{questions.length}}</span>
+            <br>
+            <span><strong>wins:</strong> {{score.wins}} //<strong>fails:</strong> {{score.fails}} // <strong>viewed:</strong> {{score.viewed}} </span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-card-content>
+        <p class="big">{{card.question}}</p>
+        <p class="response" ng-show="showResult">{{card.result}}</p>
+        <p class="response" ng-show="!showResult">&nbsp;</p>
+        <div layout="row">
+            <section flex="50" layout="column">
+                <md-button class="md-raised" aria-label="Answer-A" ng-click="selectOption(0)">
+                    <md-icon>help</md-icon>
+                    {{possibles[0].result}}
+                </md-button>
+                <md-button class="md-raised" aria-label="Answer-B" ng-click="selectOption(1)">
+                    <md-icon>help</md-icon>
+                    {{possibles[1].result}}
+                </md-button>
+            </section>
+            <section flex="50" layout="column">
+                <md-button class="md-raised" aria-label="Answer-C" ng-click="selectOption(2)">
+                    <md-icon>help</md-icon>
+                    {{possibles[2].result}}
+                </md-button>
+                <md-button class="md-raised" aria-label="Answer-D" ng-click="selectOption(3)">
+                    <md-icon>help</md-icon>
+                    {{possibles[3].result}}
+                </md-button>
+            </section>
+        </div>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-icon-button" aria-label="Delete" ng-click="goTo('start')">
+            <md-icon>close</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Edit">
+            <md-icon>create</md-icon>
+        </md-button>
+        <div flex></div>
+        <md-button class="md-icon-button" aria-label="Show Result" ng-click="getResult()">
+            <md-icon>visibility</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Next Card" ng-click="showCard()">
+            <md-icon>forward</md-icon>
+        </md-button>
+    </md-card-actions>
+</md-card>
